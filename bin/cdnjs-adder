@@ -1,19 +1,32 @@
 #!/usr/bin/env node
 
 // Dependencies
-var CdnJsAdder = require("../lib")
+var CdnJsImporter = require("../lib")
   , Minimist = require("minimist")
   , Ul = require("ul")
   , Path = require("path")
   , Logger = require("bug-killer")
+  , IsThere = require("is-there")
   ;
 
 // Parse arguments
 var argv = Minimist(process.argv.slice(2));
 
+// Constants
 const CDNJS_ROOT = argv.c ? argv.c : Path.join(Ul.USER_DIR, "cdnjs");
 
-var adder = CdnJsAdder({
+// Check if the repository exists and display friendly messages
+if (!IsThere.sync(CDNJS_ROOT)) {
+    Logger.config.displayDate = false;
+    Logger.config.logLevel = 4;
+    Logger.log("Couldn't find the CDNJS repository in this path: " + CDNJS_ROOT, "error");
+    Logger.log("Use `git clone git@github.com:cdnjs/cdnjs.git ~/cdnjs` to clone it.", "info");
+    Logger.log("If you already cloned it in another location, please provide the path to that location using `cdnjs-importer -c path/to/cdnjs`", "info");
+    return;
+}
+
+// Import the repositories
+var importer = CdnJsImporter({
     cdnjs: CDNJS_ROOT
   , debug: true
   , libs: []
@@ -23,11 +36,13 @@ var adder = CdnJsAdder({
 
 function seq(i) {
     i = i || 0;
+
     var cLib = argv._[i];
     if (!cLib) {
         return Logger.log("Done.", "info");
     }
-    adder.add(cLib, function (err) {
+
+    importer.add(cLib, function (err) {
         seq(i + 1);
     });
 }
