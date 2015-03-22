@@ -5,6 +5,7 @@ var CdnJsAdder = require("../lib")
   , Minimist = require("minimist")
   , Ul = require("ul")
   , Path = require("path")
+  , Logger = require("bug-killer")
   ;
 
 // Parse arguments
@@ -12,12 +13,23 @@ var argv = Minimist(process.argv.slice(2));
 
 const CDNJS_ROOT = argv.c ? argv.c : Path.join(Ul.USER_DIR, "cdnjs");
 
-CdnJsAdder({
+var adder = CdnJsAdder({
     cdnjs: CDNJS_ROOT
   , debug: true
-  , libs: argv._
-}, function (res) {
-    console.log(res);
+  , libs: []
+}, function (err) {
+    console.log(err);
 });
 
+function seq(i) {
+    i = i || 0;
+    var cLib = argv._[i];
+    if (!cLib) {
+        return Logger.log("Done.", "info");
+    }
+    adder.add(cLib, function (err) {
+        seq(i + 1);
+    });
+}
 
+seq();
