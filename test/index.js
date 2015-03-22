@@ -4,6 +4,7 @@ var CdnJsAdder = require("../lib")
 
 CdnJsAdder({
     cdnjs: Path.resolve(__dirname, "../../cdnjs")
+  , debug: true
   , libs: [
         "git@github.com:IonicaBizau/CaiuSS.git"
     ]
