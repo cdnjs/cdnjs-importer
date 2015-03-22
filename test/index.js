@@ -1,10 +1,10 @@
 // Dependencies
-var CdnJsAdder = require("../lib")
+var CdnJsImporter = require("../lib")
   , Path = require("path")
   ;
 
 // Test adding CaiuSS
-CdnJsAdder({
+CdnJsImporter({
     cdnjs: Path.resolve(__dirname, "../../cdnjs")
   , debug: true
   , libs: [
