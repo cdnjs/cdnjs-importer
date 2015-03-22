@@ -1,15 +1,17 @@
 {
-  "name": "cdnjs-adder",
+  "name": "cdnjs-importer",
   "version": "1.0.0",
-  "description": "Easier way to add your libraries in cdnjs.",
+  "description": "Easy way to import a library into CDNJS.",
   "main": "lib/index.js",
-  "bin": "./bin/cdnjs-adder",
+  "bin": {
+    "cdnjs-importer": "./bin/cdnjs-importer"
+  },
   "scripts": {
     "test": "node test"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:IonicaBizau/cdnjs-adder.git"
+    "url": "git@github.com:IonicaBizau/cdnjs-importer.git"
   },
   "keywords": [
     "cdnjs",
@@ -18,7 +20,23 @@
   "author": "Ionică Bizău <bizauionica@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/IonicaBizau/cdnjs-adder/issues"
+    "url": "https://github.com/IonicaBizau/cdnjs-importer/issues"
   },
-  "homepage": "https://github.com/IonicaBizau/cdnjs-adder"
+  "homepage": "https://github.com/IonicaBizau/cdnjs-importer",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "bug-killer": "^1.0.0",
+    "fs-extra": "^0.16.5",
+    "glob": "^5.0.3",
+    "gry": "^2.1.0",
+    "is-there": "^1.1.0",
+    "minimist": "^1.1.1",
+    "oargv": "^1.2.0",
+    "mkdirp": "^0.5.0",
+    "tmp": "^0.0.25",
+    "ul": "^2.1.0"
+  },
+  "devDependencies": {}
 }
