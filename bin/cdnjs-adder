@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+
+// Dependencies
+var CdnJsAdder = require("../lib")
+  , Minimist = require("minimist")
+  , Ul = require("ul")
+  , Path = require("path")
+  ;
+
+// Parse arguments
+var argv = Minimist(process.argv.slice(2));
+
+const CDNJS_ROOT = argv.c ? argv.c : Path.join(Ul.USER_DIR, "cdnjs");
+
+CdnJsAdder({
+    cdnjs: CDNJS_ROOT
+  , debug: true
+  , libs: argv._
+}, function (res) {
+    console.log(res);
+});
+
+
