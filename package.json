@@ -1,0 +1,23 @@
+{
+  "name": "cdnjs-adder",
+  "version": "1.0.0",
+  "description": "Easier way to add your libraries in cdnjs.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:IonicaBizau/cdnjs-adder.git"
+  },
+  "keywords": [
+    "cdnjs",
+    "library"
+  ],
+  "author": "Ionică Bizău <bizauionica@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IonicaBizau/cdnjs-adder/issues"
+  },
+  "homepage": "https://github.com/IonicaBizau/cdnjs-adder"
+}
