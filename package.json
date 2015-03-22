@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Easier way to add your libraries in cdnjs.",
   "main": "lib/index.js",
+  "bin": "./bin/cdnjs-adder",
   "scripts": {
     "test": "node test"
   },
