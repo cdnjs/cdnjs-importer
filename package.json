@@ -29,6 +29,7 @@
   "dependencies": {
     "bug-killer": "^1.0.0",
     "fs-extra": "^0.16.5",
+    "fs-plus": "2.7.0",
     "glob": "^5.0.3",
     "gry": "^2.1.0",
     "is-there": "^1.1.0",
