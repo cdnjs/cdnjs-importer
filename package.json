@@ -1,6 +1,6 @@
 {
   "name": "cdnjs-importer",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Easy way to import a library into CDNJS.",
   "main": "lib/index.js",
   "bin": {
@@ -18,6 +18,9 @@
     "library"
   ],
   "author": "Ionică Bizău <bizauionica@gmail.com>",
+  "contributors": [
+    "Peter Dave Hello <hsu@peterdavehello.org>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/IonicaBizau/cdnjs-importer/issues"

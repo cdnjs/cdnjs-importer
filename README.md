@@ -41,7 +41,7 @@ Adds a new library in the local cdnjs repository.
 - **Object|String** `lib`: The git url as string or an object containing:
  - `git` (String): The `git` url.
  - `dir` (String): The directory containing the files which should be imported (default: `"/dist"` or `"/build"` or `"/src"` or `"/"`).
- - `map` (Array): The file map used by cdnjs in autoupdate process (default: `[{ basePath: lib.dir , files: ["*"] }]`).
+ - `map` (Array): The file map used by cdnjs in autoupdate process (default: `[{ basePath: lib.dir , files: ["**/*"] }]`).
 - **Function** `callback`: The callback function called with `error` and `data`.
 
 #### Return
