@@ -18,6 +18,13 @@
     "library"
   ],
   "author": "Ionică Bizău <bizauionica@gmail.com>",
+  "contributors": [
+    {
+      "name": "Peter Dave Hello",
+      "email": "hsu <at> peterdavehello <dot> org",
+      "website": "https://www.peterdavehello.org"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/IonicaBizau/cdnjs-importer/issues"
