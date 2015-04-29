@@ -1,6 +1,6 @@
 {
   "name": "cdnjs-importer",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Easy way to import a library into CDNJS.",
   "main": "lib/index.js",
   "bin": {
