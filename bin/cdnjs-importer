@@ -11,9 +11,9 @@ var CdnJsImporter = require("../lib")
   ;
 
 // Parse the command line arguments
-var gitUrlOpt = new CLP.Option(["g", "git-url"], "Your library git url.", "git-url")
-  , pathOpt = new CLP.Option(["p", "path"], "The path to your cdnjs local repository.", "path", Path.join(Ul.home(), "cdnjs"))
-  , parser = new CLP({
+var gitUrlOpt = new Clp.Option(["g", "git-url"], "Your library git url.", "git-url")
+  , pathOpt = new Clp.Option(["p", "path"], "The path to your cdnjs local repository.", "path", Path.join(Ul.home(), "cdnjs"))
+  , parser = new Clp({
         name: "CDNJS Importer"
       , version: Package.version
       , exe: Package.name
