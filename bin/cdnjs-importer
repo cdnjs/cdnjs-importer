@@ -56,6 +56,6 @@ var importer = CdnJsImporter({
         gitUrlOpt.value
     ]
 }, function (err) {
-    if (err) { return Logger.log(err); }
+    if (err) { return Logger.log(err, "error"); }
     Logger.log("Successfully done. Now you have to push your changes on GitHub and raise a pull request.");
 });
