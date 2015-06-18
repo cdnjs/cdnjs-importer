@@ -2,50 +2,60 @@
 
 // Dependencies
 var CdnJsImporter = require("../lib")
-  , Minimist = require("minimist")
   , Ul = require("ul")
   , Path = require("path")
   , Logger = require("bug-killer")
   , IsThere = require("is-there")
-  , Fs = require("fs-plus")
+  , Clp = require("clp")
+  , Package = require("../package")
   ;
 
-// Parse arguments
-var argv = Minimist(process.argv.slice(2));
+// Parse the command line arguments
+var gitUrlOpt = new CLP.Option(["g", "git-url"], "Your library git url.", "git-url")
+  , pathOpt = new CLP.Option(["p", "path"], "The path to your cdnjs local repository.", "path", Path.join(Ul.home(), "cdnjs"))
+  , parser = new CLP({
+        name: "CDNJS Importer"
+      , version: Package.version
+      , exe: Package.name
+      , examples: [
+            "cdnjs-importer -i git@github.com:IonicaBizau/gh.js.git # adds gh.js to cdnjs"
+          , "cdnjs-importer -i ... -p path/to/cdnjs"
+        ]
+      , docs_url: Package.homepage
+      , notes: "The default cdnjs repository location is in ~/cdnjs"
+      , process: true
+    }, [
+        gitUrlOpt
+      , pathOpt
+    ])
+  ;
 
-// Constants
-const CDNJS_ROOT = argv.c ? argv.c : Path.join(Ul.USER_DIR, "cdnjs");
+// Invalid git url
+if (!gitUrlOpt.value) {
+    return console.log(parser.displayHelp());
+}
+
+// Resolve the path to the cdnjs repo
+if (pathOpt.is_provided) {
+    pathOpt.value = Path.resolve(pathOpt.value.replace("~", Ul.home()));
+}
 
 // Check if the repository exists and display friendly messages
-if (!IsThere.sync(CDNJS_ROOT)) {
-    Logger.config.displayDate = false;
-    Logger.config.logLevel = 4;
+if (!IsThere(pathOpt.value)) {
     Logger.log("Couldn't find the CDNJS repository in this path: " + CDNJS_ROOT, "error");
     Logger.log("Use `git clone git@github.com:cdnjs/cdnjs.git ~/cdnjs` to clone it.", "info");
-    Logger.log("If you already cloned it in another location, please provide the path to that location using `cdnjs-importer -c path/to/cdnjs`", "info");
+    Logger.log("If you already cloned it in another location, please provide the path to that location using `cdnjs-importer -p path/to/cdnjs`", "info");
     return;
 }
 
 // Import the repositories
 var importer = CdnJsImporter({
-    cdnjs: Fs.normalize(CDNJS_ROOT)
+    cdnjs: pathOpt.value
   , debug: true
-  , libs: []
+  , libs: [
+        gitUrlOpt.value
+    ]
 }, function (err) {
-    console.log(err);
+    if (err) { return Logger.log(err); }
+    Logger.log("Successfully done. Now you have to push your changes on GitHub and raise a pull request.");
 });
-
-function seq(i) {
-    i = i || 0;
-
-    var cLib = argv._[i];
-    if (!cLib) {
-        return Logger.log("Done.", "info");
-    }
-
-    importer.add(cLib, function (err) {
-        seq(i + 1);
-    });
-}
-
-seq();
