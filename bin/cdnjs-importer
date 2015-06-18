@@ -18,8 +18,8 @@ var gitUrlOpt = new Clp.Option(["g", "git-url"], "Your library git url.", "git-u
       , version: Package.version
       , exe: Package.name
       , examples: [
-            "cdnjs-importer -i git@github.com:IonicaBizau/gh.js.git # adds gh.js to cdnjs"
-          , "cdnjs-importer -i ... -p path/to/cdnjs"
+            "cdnjs-importer -g git@github.com:IonicaBizau/gh.js.git # adds gh.js to cdnjs"
+          , "cdnjs-importer -g ... -p path/to/cdnjs"
         ]
       , docs_url: Package.homepage
       , notes: "The default cdnjs repository location is in ~/cdnjs"
