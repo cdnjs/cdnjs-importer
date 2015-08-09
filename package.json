@@ -44,7 +44,7 @@
     "same-time": "^2.0.0",
     "tmp": "^0.0.26",
     "ul": "^5.0.0",
-    "w-json": "^1.0.0"
+    "w-json": "^1.1.0"
   },
   "blah": {
     "h_img": "http://i.imgur.com/OLwedYJ.png"
