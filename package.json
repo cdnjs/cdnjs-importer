@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:IonicaBizau/cdnjs-importer.git"
+    "url": "git@github.com:cdnjs/cdnjs-importer.git"
   },
   "keywords": [
     "cdnjs",
@@ -23,9 +23,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/IonicaBizau/cdnjs-importer/issues"
+    "url": "https://github.com/cdnjs/cdnjs-importer/issues"
   },
-  "homepage": "https://github.com/IonicaBizau/cdnjs-importer",
+  "homepage": "https://github.com/cdnjs/cdnjs-importer",
   "directories": {
     "test": "test"
   },
