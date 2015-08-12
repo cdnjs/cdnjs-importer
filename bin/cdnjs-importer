@@ -8,11 +8,15 @@ var CdnJsImporter = require("../lib")
   , IsThere = require("is-there")
   , Clp = require("clp")
   , Package = require("../package")
+  , Abs = require("abs")
   ;
+
+// Constants
+const CDNJS_ROOT = Abs("~/cdnjs");
 
 // Parse the command line arguments
 var gitUrlOpt = new Clp.Option(["g", "git-url"], "Your library git url.", "git-url")
-  , pathOpt = new Clp.Option(["p", "path"], "The path to your cdnjs local repository.", "path", Path.join(Ul.home(), "cdnjs"))
+  , pathOpt = new Clp.Option(["p", "path"], "The path to your cdnjs local repository.", "path", CDNJS_ROOT)
   , parser = new Clp({
         name: "CDNJS Importer"
       , version: Package.version
