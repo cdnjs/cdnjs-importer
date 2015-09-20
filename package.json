@@ -32,16 +32,16 @@
   },
   "dependencies": {
     "bug-killer": "^1.0.0",
-    "fs-extra": "^0.16.5",
-    "fs-plus": "2.7.0",
-    "glob": "^5.0.3",
-    "gry": "^2.1.0",
+    "fs-extra": "^0.24.0",
+    "fs-plus": "2.8.1",
+    "glob": "^5.0.14",
+    "gry": "^4.0.0",
     "is-there": "^1.1.0",
-    "minimist": "^1.1.1",
-    "oargv": "^1.2.0",
-    "mkdirp": "^0.5.0",
-    "tmp": "^0.0.25",
-    "ul": "^2.1.0"
+    "minimist": "^1.2.0",
+    "oargv": "^2.0.0",
+    "mkdirp": "^0.5.1",
+    "tmp": "^0.0.27",
+    "ul": "^5.0.0"
   },
   "devDependencies": {}
 }
