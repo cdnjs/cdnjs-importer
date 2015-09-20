@@ -7,7 +7,8 @@
     "cdnjs-importer": "./bin/cdnjs-importer"
   },
   "scripts": {
-    "test": "node test"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "example": "node example"
   },
   "repository": {
     "type": "git",
