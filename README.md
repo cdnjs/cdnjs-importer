@@ -34,6 +34,29 @@ For example, to add [`gh.js`]() in CDNJS, do:
 $ cdnjs-importer -g git@github.com:IonicaBizau/gh.js.git
 ```
 
+## Example
+
+Here is an example how to use this package as library.
+
+```js
+// Dependencies
+var CdnJsImporter = require("cdnjs-importer")
+  , Path = require("path")
+  ;
+
+// Test adding CaiuSS
+CdnJsImporter({
+    cdnjs: Path.resolve(__dirname, "../../cdnjs")
+  , debug: true
+  , libs: [
+        "git@github.com:IonicaBizau/CaiuSS.git"
+    ]
+}, function (res) {
+    console.log(res);
+});
+
+```
+
 ## Documentation
 
 For full API reference, see the [DOCUMENTATION.md][docs] file.
@@ -50,4 +73,4 @@ a copy of the license.
 [website]: http://ionicabizau.net
 [docs]: /DOCUMENTATION.md
 [paypal-donations]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MG98D7NPFZ3MG
-[donate-now]: http://i.imgur.com/jioicaN.png
+[donate-now]: http://i.imgur.com/6cMbHOC.png
