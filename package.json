@@ -32,7 +32,7 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "bug-killer": "^3.0.0",
+    "bug-killer": "^4.0.0",
     "clp": "^3.0.0",
     "glob": "^5.0.10",
     "gry": "^4.0.0",
@@ -43,9 +43,10 @@
     "one-by-one": "^2.0.0",
     "r-json": "^1.0.0",
     "same-time": "^2.0.0",
-    "tmp": "^0.0.26",
+    "tmp": "0.0.28",
     "ul": "^5.0.0",
-    "w-json": "^1.1.0"
+    "w-json": "^1.1.0",
+    "abs": "^1.0.0"
   },
   "blah": {
     "h_img": "http://i.imgur.com/OLwedYJ.png"
