@@ -41,12 +41,12 @@ if (!gitUrlOpt.value) {
 
 // Resolve the path to the cdnjs repo
 if (pathOpt.is_provided) {
-    pathOpt.value = Path.resolve(pathOpt.value.replace("~", Ul.home()));
+    pathOpt.value = Abs(pathOpt.value);
 }
 
 // Check if the repository exists and display friendly messages
 if (!IsThere(pathOpt.value)) {
-    Logger.log("Couldn't find the CDNJS repository in this path: " + CDNJS_ROOT, "error");
+    Logger.log("Couldn't find the CDNJS repository in this path: " + pathOpt.value, "error");
     Logger.log("Use `git clone git@github.com:cdnjs/cdnjs.git ~/cdnjs` to clone it.", "info");
     Logger.log("If you already cloned it in another location, please provide the path to that location using `cdnjs-importer -p path/to/cdnjs`", "info");
     return;
