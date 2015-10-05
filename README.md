@@ -19,24 +19,42 @@
 
 Easy way to import a library into CDNJS.
 
-### CLI Usage
+## Installation
+
 You can install the package globally and use it as command line tool:
 
 ```sh
-$ npm i -g cdnjs-importer
+$ npm i -g cdnjs-importer@2.0.0-beta
 ```
 
-Then, run `cdnjs-importer --help` and see what the cli tool can do.
-
-For example, to add [`gh.js`]() in CDNJS, do:
+Then, run `cdnjs-importer --help` and see what the CLI tool can do.
 
 ```sh
-$ cdnjs-importer -g git@github.com:IonicaBizau/gh.js.git
+$ cdnjs-importer --help
+Usage: cdnjs-importer [options]
+
+Options:
+  -g, --git-url <git-url>  Your library git url.
+  -p, --path <path>        The path to your cdnjs local repository.
+  -h, --help               Displays this help.
+  -v, --version            Displays version information.
+
+Examples:
+  cdnjs-importer -g git@github.com:IonicaBizau/gh.js.git # adds gh.js to cdnjs
+  cdnjs-importer -g ... -p path/to/cdnjs
+
+The default cdnjs repository location is in ~/cdnjs
+
+Documentation can be found at https://github.com/cdnjs/cdnjs-importer
 ```
 
 ## Example
 
-Here is an example how to use this package as library.
+Here is an example how to use this package as library. To install it locally, as library, you can do that using `npm`:
+
+```sh
+$ npm i cdnjs-importer
+```
 
 ```js
 // Dependencies
@@ -63,6 +81,9 @@ For full API reference, see the [DOCUMENTATION.md][docs] file.
 
 ## How to contribute
 Have an idea? Found a bug? See [how to contribute][contributing].
+
+## Press Highlights
+None yet. If you wrote or found an article about this project, [add it][contributing] in this section.  :memo:
 
 ## License
 [KINDLY][license] © [Ionică Bizău][website]–The [LICENSE](/LICENSE) file contains
