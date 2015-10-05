@@ -1,6 +1,6 @@
 {
   "name": "cdnjs-importer",
-  "version": "1.4.1",
+  "version": "2.0.0-beta",
   "description": "Easy way to import a library into CDNJS.",
   "main": "lib/index.js",
   "bin": {
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:IonicaBizau/cdnjs-importer.git"
+    "url": "git@github.com:cdnjs/cdnjs-importer.git"
   },
   "keywords": [
     "cdnjs",
@@ -24,24 +24,31 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/IonicaBizau/cdnjs-importer/issues"
+    "url": "https://github.com/cdnjs/cdnjs-importer/issues"
   },
-  "homepage": "https://github.com/IonicaBizau/cdnjs-importer",
+  "homepage": "https://github.com/cdnjs/cdnjs-importer",
   "directories": {
     "test": "test"
   },
+  "devDependencies": {},
   "dependencies": {
-    "bug-killer": "^1.0.0",
-    "fs-extra": "^0.16.5",
-    "fs-plus": "2.7.0",
-    "glob": "^5.0.3",
-    "gry": "^2.1.0",
-    "is-there": "^1.1.0",
-    "minimist": "^1.1.1",
-    "oargv": "^1.2.0",
-    "mkdirp": "^0.5.0",
-    "tmp": "^0.0.25",
-    "ul": "^2.1.0"
+    "bug-killer": "^4.0.0",
+    "clp": "^3.0.0",
+    "glob": "^5.0.10",
+    "gry": "^4.0.0",
+    "is-there": "^4.0.0",
+    "mkdirp": "^0.5.1",
+    "ncp": "^2.0.0",
+    "oargv": "^2.0.0",
+    "one-by-one": "^2.0.0",
+    "r-json": "^1.0.0",
+    "same-time": "^2.0.0",
+    "tmp": "0.0.28",
+    "ul": "^5.0.0",
+    "w-json": "^1.1.0",
+    "abs": "^1.0.0"
   },
-  "devDependencies": {}
+  "blah": {
+    "h_img": "http://i.imgur.com/OLwedYJ.png"
+  }
 }
